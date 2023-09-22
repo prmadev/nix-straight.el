@@ -1,9 +1,12 @@
-{ fetchFromGitHub, trivialBuild }:
-
+{
+  fetchFromGitHub,
+  trivialBuild,
+}:
 trivialBuild rec {
   pname = "straight.el";
+  version = "20220901.0";
   ename = pname;
-  patches = [ ./nogit.patch ];
+  patches = [./nogit.patch];
   src = fetchFromGitHub {
     owner = "raxod502";
     repo = "straight.el";
